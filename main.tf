@@ -81,6 +81,10 @@ resource "aws_instance" "webserver1" {
   user_data              = base64encode(file("userdata.sh"))
 }
 
+ tags = {
+    Name = "ABHISHEK"
+  }
+
 resource "aws_instance" "webserver2" {
   ami                    = "ami-053b0d53c279acc90"
   instance_type          = "t2.micro"
@@ -88,3 +92,6 @@ resource "aws_instance" "webserver2" {
   subnet_id              = aws_subnet.sub2.id
   user_data              = base64encode(file("userdata1.sh"))
 }
+ tags = {
+    Name = "CLOUDHAPM"
+  }
